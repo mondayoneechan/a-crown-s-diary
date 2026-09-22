@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiara's Diary i made just for herrr</title>
+    <style>
+       body {
+        background-color: #f3e8d0;
+        font-family: georgia, serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+       }
+       .diary {
+        background-color: #fffaf0;
+        width: 500px;
+        min-height: 350px;
+        padding: 35px;
+        border: 2px solid #8b7355;
+        box-shadow: 5px 5pc 15px #c0a57c;
+        text-align: center;
+       }
+       h2 {margin-top: 0;}
+       #date {color: #777;} #entry {margin-top: 40px; line-height: 1.8; min-height: 150px;}
+       button {
+        padding: 8px 15px;
+        margin: 5px;
+        background-color: rgb(255, 255, 255);
+        border:1px solid  #894b00;
+        border-radius: 15px;
+        cursor: pointer;
+       }
+       button:hover {
+        background-color: #eee;
+       }
+       button:active {
+        background-color: rgb(198, 198, 198);
+       }
+       button:disabled {
+        cursor: default;
+        opacity: 0.5;
+       }
+       @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+      
+    </style>
+</head>
+<body>
+    <div class="diary">
+        <h1 style="color: #894b00;">Crown's Diary</h1>
+
+        <p id="title"></p> 
+        <p id="entry"></p>
+        <p id="date"></p>
+        <p id="image"></p>
+        <p class="hy"></p>
+
+        <div class="buttons">
+            <button id="prev">Prev</button>
+            <button id="next">Next</button>
+        </div>
+    </div>
+    <div id="hy"></div>
+    <script>
+        // dudeeeeeeee help meeeeeeee i wanna write but i feel lazy ahhhhhhhhhhhhhhhhhhhhhhh, okay nobody can know im riting this, of course of course!!!! shhhhhhhhhh....
+        const entries = [
+            {
+                date: "april 12 2028",
+                title: "my lil self",
+                entry: "How can i not remember it? The day when i told her i want to get famous, to get known, and how she said yes despite looking doubtful and forced (whom i even noticed just now)? Welp, i couldnt forget that, wish it didnt come true, of course, stupid lil me!!"
+            },
+            {
+                date: "may 24 2029",
+                title: "i think i should just spill my liquids here from now on..",
+                entry: ""
+            },
+
+            {
+                date: "june 21 2029",
+                title: "her advice",
+                entry: "Charline saw how weary i looked today, so she came over and tells me not to overwork myself by doing mutiple requests from people or anything like that, and 'you should have a rest' thing before going back being Charline again, it was not a very long conversation because i just nodded it all, honestly? she seems to notice it too but we all know she is not the person to expose stuff immediately, but anyways, her coming to say those to me makes me wonders if i should try them."
+            },
+
+            {
+                date: "july 18 2029",
+                title: "yoooooooooooo!!!!!!!!",
+                entry: "nobody will fr know what im feeling now!!! absolute joy and peakness (as thats what she and others teach me to say..lol) because someone actually gets my teaching and became better!! and because he became better than me, that means i succeed, hooway, WAIT WHY AM I ACTING LIKE A CHILD",
+
+            },
+
+            {
+                date: "august 17 2029 ",
+                title: "For..real?",
+                entry: "I almost forgot to pray again, yes, you heard it, again... it is not my first time, its unnormal, have i been too joyblessed that i became blind to this? Charline has always said 'Tho im sure you all dont need to do pray as a non-human being, i still think it really matters, so do it!!', i mean, i do feel empty when i forgot to pray, so i guess thats why.."
+            },
+
+            {
+                date: "august 29 2029",
+                title: "Watching",
+                entry: "After i livestreamed on tiktok, i feel like there is a shadow that is watching me, and it dosent feel like an unfamilliar shadow, like i have met them long ago, its footsteps, its shadow, its feeling, and everything, but i dont wanna assume...anyways, it kept chasing me and chasing me until i was in public, the Crystalinks were doing their stuff together and invited me to join, after that, the shadow went away for good.."
+            },
+
+            {
+                date: "october 13 2029",
+                title: "Liked!",
+                entry: "I posted at 3am earlier before goin to bed, and guess what, it became the 1# trend on Youtube and became my most loved video!! For real i succeed at making a non-music rap, yay"
+            },
+
+            {
+                date: "amber told me to not put a date on this page",
+                title: "amberfish angler",
+                entry: "srsly Amber came to me and flexed her cool Anglerfish skills and then told me to swim on my palace with her and then she treats me like im a liquid, what the h---??!! or right i cant cuss.. + im graceful"
+            },
+
+            {
+                date: "january 5 2030",
+                title: "",
+                entry: "It is not the first time i have thought this, but i wish i could stop, just let me stop, yet i feel like i cant stop no matter how much everyone tells me if its alright to, it is MY job, my dream-come-true, my career, like... what am i without it?"
+            },
+            {
+                date: "",
+                title: "it",
+                entry: "i feel like i have no privacy anymore, i am watched all the ---- time, when i am about to sleep, the shadow is on my window, when im preparing to perform, a shadow stalks me again, or whatever im doing, i cant take it i cant take it"
+            },
+            {
+                date: "first picnic day in 2030",
+                title: "picnic day",
+                entry: "today is the day to touch grass because charline said it is to keep us sane from bluelight, glad she is responsible, though i and others can only watch and have picnic on the inside of our realm while charline, darlie, and human beings get to do it outside the realm"
+            },
+            {
+                date: "february 13 2030",
+                title: "",
+                entry: "eibiysidiIyefji,ichaijeikeielemenoup,kyuares,tiiuvvi,doubleyueks,waiandzi, now i know my abc dont you wanna sing with meeeeeeeeeeeeeeeeeeeeeeeeeeeeee!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+            },
+            {
+                date: "",
+                title: "",
+                entry: ""
+            },
+            {
+                date: "",
+                title: "",
+                entry: ""
+            },
+            {
+                date: "",
+                title: "",
+                entry: "omG! this is Miss's Tiaras diary book??????? amazing, im gonna blow up of pure joy!! IF anyone or even Miss herself read this, please be careful and stay safe from the big bads!!",
+                font: "Caveat",
+                image: "https://i.ibb.co.com/8D8MKk99/Drawing-4-sketchpad.png",
+            },
+            {
+                date: "",
+                title: "",
+                entry: "i think Tiara is really beautiful cute, graceful, gracious, amaing, talented, oh she is everything, how can you need to look at her twice?! I hate those people who are envious of her!!"
+            },
+            {
+                date: "",
+                title: "filled",
+                entry: "why are there two filled pages of mine...? i havent opened my diary in ages, creep.."
+            },
+            {
+                date: "",
+                title: "uhoh",
+                entry: "Amber asked why are these scissors on my room, crap, i said it was there because i gotta do creativity for my contents, well its not really a lie so she was not that stupid this time"
+            },
+            {
+                date: "april 12 2030",
+                title: "Two siblings broke into our realm, labeled as Y&N",
+                entry: "Charline woke up and screamed today to the whole Realm, da--! Darlie alwways HAVE to wake her up for obviously no reason, i mean, of course, we have woke, but we were surprised, so da-- surprised, especially to the fact that alarms were ringing badly, two siblings broke into our realm, i wonder in which kind of universe they are from? No normal humans can do that, especially with like an axe, and acrossing the lava?? Most of people need Darlie or literally any Crystalink's guidance! Amazing.. its a crazy day, and we had hide and seek, not a bad day, it was fun."
+            },
+            {
+                date: "april 16 2030",
+                title: "lmao",
+                entry: "so basically i feel so off i got to stalk Darlie all the way, i see her coming onto Nawn, they seem close somehow, and Yoon is just like 'brotha lets play somewhere else ya??' lmao it was so funny, stuff happened with them, especially Darlie's iconic 'i dont trust newcomers who broke into our realm i got to wake Charline up' lol"
+            },
+        ]
+        let currentPage = 0;
+        const title = document.getElementById("title");
+        const date = document.getElementById("date");
+        const entry = document.getElementById("entry");
+        const next = document.getElementById("next");
+        const prev = document.getElementById("prev");
+        const image = document.getElementById("image");
+
+        function showPage() {
+            title.textContent = entries[currentPage].title;
+            date.textContent = entries[currentPage].date;
+            entry.textContent = entries[currentPage].entry;
+            prev.disabled = currentPage === 0;
+            next.disabled = currentPage === entries.length - 1;
+            image.innerHTML = entries[currentPage].image
+            ? `<img src="${entries[currentPage].image}" width= "550">` : "";
+        }
+        next.onclick = () => { 
+            currentPage++;
+            showPage();
+        };
+        prev.onclick = () => { 
+            currentPage--;
+            showPage();
+        };
+        showPage();
+    </script>
+</body>
+</html>
